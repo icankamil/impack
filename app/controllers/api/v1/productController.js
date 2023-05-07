@@ -2,21 +2,20 @@
  * @file contains request handler of post resource
  * @author Muhammad Insan Kamil
  */
-const postService = require("../../../services/postService");
+const productService = require("../../../services/productService");
 
 module.exports = {
   list(req, res) {
-    postService
+    productService
       .list()
       .then(({ data, count }) => {
         res.status(200).json({
           status: "OK",
-          data: { posts: data },
+          data: { product: data },
           meta: { total: count },
         });
       })
       .catch((err) => {
-        console.log(err);
         res.status(400).json({
           status: "FAIL",
           message: err.message,
@@ -25,7 +24,7 @@ module.exports = {
   },
 
   create(req, res) {
-    postService
+    productService
       .create(req.body)
       .then((post) => {
         res.status(201).json({
@@ -42,7 +41,7 @@ module.exports = {
   },
 
   update(req, res) {
-    postService
+    productService
       .update(req.params.id, req.body)
       .then(() => {
         res.status(200).json({
@@ -58,7 +57,7 @@ module.exports = {
   },
 
   show(req, res) {
-    postService
+    productService
       .get(req.params.id)
       .then((post) => {
         res.status(200).json({
@@ -75,7 +74,7 @@ module.exports = {
   },
 
   destroy(req, res) {
-    postService
+    productService
       .delete(req.params.id)
       .then(() => {
         res.status(204).end();

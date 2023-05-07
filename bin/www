@@ -2,12 +2,12 @@
 
 /**
  * @file Run express.js
- * @author Fikri Rahmat Nurhidayat
+ * @author Muhammad Insan Kamil
  */
 
-const app = require("../app")
+const app = require("../app");
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
-  console.log(`Listening on http://localhost:${port}`)
-})
+  console.log(`Listening on http://localhost:${port}`);
+});

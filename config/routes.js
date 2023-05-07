@@ -11,6 +11,17 @@ apiRouter.get("/api/v1/posts", controllers.api.v1.postController.list);
 apiRouter.post("/api/v1/posts", controllers.api.v1.postController.create);
 apiRouter.put("/api/v1/posts/:id", controllers.api.v1.postController.update);
 apiRouter.get("/api/v1/posts/:id", controllers.api.v1.postController.show);
+apiRouter.get("/api/v1/products", controllers.api.v1.productController.list);
+apiRouter.post("/api/v1/products", controllers.api.v1.productController.create);
+apiRouter.put(
+  "/api/v1/products/:id",
+  controllers.api.v1.productController.update
+);
+apiRouter.get(
+  "/api/v1/products/:id",
+  controllers.api.v1.productController.show
+);
+
 apiRouter.delete(
   "/api/v1/posts/:id",
   controllers.api.v1.postController.destroy
